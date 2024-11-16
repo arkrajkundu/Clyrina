@@ -1,0 +1,202 @@
+/* Layout */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Main Content */
+.dashboard-container .main-content {
+  flex-grow: 1;
+  padding: 40px;
+}
+
+.dashboard-container .main-content .content {
+  background-color: #fff;
+  padding: 28px;
+  border-radius: 12px;
+}
+
+.dashboard-container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-container .header h1 {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.dashboard-container .no-cameras {
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #808080;
+}
+
+.dashboard-container .no-cameras .no-cameras-message {
+  margin-bottom: 30px;
+}
+
+.dashboard-container .no-cameras .add-btn {
+  width: 150px;
+  border: 1px solid rgba(35, 131, 205, 255);
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  color: rgba(35, 131, 205, 255);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.dashboard-container .no-cameras .add-btn:hover {
+  background-color: rgba(35, 131, 205, 255);
+  color: white;
+}
+
+/* Camera List */
+.dashboard-container .camera-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.dashboard-container .camera-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.dashboard-container .camera-item h4 {
+  font-size: 17px;
+  margin-bottom: 10px;
+  text-align: left;
+  width: 80%;
+  font-weight: 400;
+}
+
+.dashboard-container .video-container {
+  border: 1px solid #609df8;
+  border-radius: 15px;
+  width: 80%;
+  height: 230px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container .video-container>.react-hls-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dashboard-container .error-message {
+  color: red;
+  font-size: 0.9rem;
+}
+
+.dashboard-container .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(170, 187, 210, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-container .modal-header {
+  display: flex;
+  margin-bottom: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-container .modal {
+  background-color: #fff;
+  padding: 40px;
+  width: 600px;
+  border-radius: 15px;
+}
+
+.dashboard-container .modal h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.dashboard-container .modal label {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.dashboard-container .modal input {
+  width: 100%;
+  padding: 20px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.dashboard-container .modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.dashboard-container .close-btn {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.dashboard-container .close-btn:hover {
+  color: #888;
+}
+
+.dashboard-container .add-camera-btn {
+  padding: 10px 20px;
+  background-color: rgba(35, 131, 205, 255);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-family: "Josefin Sans";
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.dashboard-container .add-camera-btn:hover {
+  background-color: #0056b3;
+}
+
+.dashboard-container .modal .modal-actions {
+  display: flex;
+  justify-content: end;
+}
+
+.dashboard-container .modal .add-btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: rgba(35, 131, 205, 255);
+  border: 1px solid rgba(35, 131, 205, 255);
+  width: 100px;
+  color: white;
+}
+
+.dashboard-container .modal .add-btn:hover {
+  background-color: white;
+  color: rgba(35, 131, 205, 255);
+}
