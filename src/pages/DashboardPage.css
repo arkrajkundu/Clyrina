@@ -1,17 +1,16 @@
-/* Layout */
 .dashboard-container {
   display: flex;
   height: 100vh;
+  background-color: #343247;
 }
 
-/* Main Content */
 .dashboard-container .main-content {
   flex-grow: 1;
   padding: 40px;
 }
 
 .dashboard-container .main-content .content {
-  background-color: #fff;
+  background-color: #232230;
   padding: 28px;
   border-radius: 12px;
 }
@@ -25,7 +24,8 @@
 
 .dashboard-container .header h1 {
   font-size: 1.8rem;
-  color: #333;
+  color: #fff;
+  opacity: 0.95;
 }
 
 .dashboard-container .no-cameras {
@@ -43,26 +43,30 @@
 
 .dashboard-container .no-cameras .add-btn {
   width: 150px;
-  border: 1px solid rgba(35, 131, 205, 255);
+  border: 1px solid #15a5ae;
   background-color: white;
   padding: 5px;
   border-radius: 5px;
-  color: rgba(35, 131, 205, 255);
+  color: #15a5ae;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 
 .dashboard-container .no-cameras .add-btn:hover {
-  background-color: rgba(35, 131, 205, 255);
+  background-color: #15a5ae;
   color: white;
 }
 
-/* Camera List */
 .dashboard-container .camera-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   width: 100%;
+}
+
+.dashboard-container .no-link-style {
+  text-decoration: none;
+  color: inherit;
 }
 
 .dashboard-container .camera-item {
@@ -73,6 +77,7 @@
 }
 
 .dashboard-container .camera-item h4 {
+  color: #fff;
   font-size: 17px;
   margin-bottom: 10px;
   text-align: left;
@@ -108,7 +113,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(170, 187, 210, 0.6);
+  background-color: rgba(34, 36, 40, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,8 +126,12 @@
   align-items: center;
 }
 
+.dashboard-container .modal-header h2 {
+  color: #fff;
+}
+
 .dashboard-container .modal {
-  background-color: #fff;
+  background-color: rgb(61, 60, 75);
   padding: 40px;
   width: 600px;
   border-radius: 15px;
@@ -136,6 +145,7 @@
 .dashboard-container .modal label {
   font-size: 1rem;
   margin-top: 10px;
+  color: #fff;
 }
 
 .dashboard-container .modal input {
@@ -144,7 +154,15 @@
   margin-top: 5px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
+  background-color: rgb(83, 82, 97);
+  color: #fff;
   border-radius: 4px;
+  outline: none;
+}
+
+.single-camera-page .modal input::placeholder {
+  color: #aaa;
+  font-style: italic;
 }
 
 .dashboard-container .modal-actions {
@@ -158,16 +176,16 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #333;
+  color: #fff;
 }
 
 .dashboard-container .close-btn:hover {
-  color: #888;
+  color: #14959e;
 }
 
 .dashboard-container .add-camera-btn {
   padding: 10px 20px;
-  background-color: rgba(35, 131, 205, 255);
+  background-color: #15a5ae;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -177,7 +195,7 @@
 }
 
 .dashboard-container .add-camera-btn:hover {
-  background-color: #0056b3;
+  background-color: #14959e;
 }
 
 .dashboard-container .modal .modal-actions {
@@ -190,13 +208,13 @@
   font-size: 0.9rem;
   border-radius: 20px;
   cursor: pointer;
-  background-color: rgba(35, 131, 205, 255);
-  border: 1px solid rgba(35, 131, 205, 255);
+  background-color: #15a5ae;
+  border: 1px solid #15a5ae;
   width: 100px;
   color: white;
 }
 
 .dashboard-container .modal .add-btn:hover {
-  background-color: white;
-  color: rgba(35, 131, 205, 255);
+  background-color: #14959e;
+  color: #fff;
 }

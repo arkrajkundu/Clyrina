@@ -1,20 +1,21 @@
 .single-camera-page {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
+  background-color: #343247;
 }
 
 .single-camera-page .main-content {
-  background-color: #fff;
+  background-color: #232230;
   flex-grow: 1;
   padding: 40px;
-  margin: 28px;
+  margin: 20px;
   border-radius: 12px;
 }
 
 .single-camera-page .main-content .back button {
   border: none;
-  background-color: #fff;
-  color: #203B69B2;
+  background-color: transparent;
+  color: #b4b4b4;
   cursor: pointer;
 }
 
@@ -22,11 +23,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-top: 20px;
   font-size: 24px;
   padding-left: 20px;
-  color: #203B69;
+  color: #fff;
 }
 
 .single-camera-page .main-content .top {
@@ -36,12 +37,12 @@
 
 .single-camera-page .main-content .top .left {
   display: flex;
-  flex: 2;
   flex-direction: column;
   border: 1px solid #ccc;
   border-radius: 12px;
   margin: 15px;
   padding: 20px;
+  flex: 1;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -57,6 +58,7 @@
 .single-camera-page .main-content .top .left .top-content p,
 .single-camera-page .main-content .bottom .top-content {
   font-size: 20px;
+  color: #fff;
 }
 
 .single-camera-page .main-content .top .left .top-content button {
@@ -64,7 +66,7 @@
   height: 37px;
   width: 37px;
   font-size: 20px;
-  background-color: #2484CD;
+  background-color: #15a5ae;
   border: none;
   color: #fff;
   cursor: pointer;
@@ -80,22 +82,45 @@
 
 .single-camera-page .main-content .top .left .bottom-content p {
   margin-bottom: 10px;
-  color: #203B6982;
+  color: #979797;
 }
 
-.single-camera-page .main-content .top .left .bottom-content button {
+.single-camera-page .main-content .top .left .tracker-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  gap: 10px;
+}
+
+.single-camera-page .main-content .top .left button {
   width: 150px;
-  border: 1px solid rgba(35, 131, 205, 255);
-  background-color: white;
+  border: 1px solid #15a5ae;
+  background-color: #15a5ae;
   padding: 5px;
   border-radius: 5px;
-  color: rgba(35, 131, 205, 255);
+  color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  transition: all 0.3s ease;
+  /* Smooth transition for all properties */
 }
 
+.single-camera-page .main-content .top .left button:hover {
+  background-color: #15878f;
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.single-camera-page .main-content .top .left button:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+
 .single-camera-page .video-container {
-  border: 1px solid #1778FF99;
+  flex: 1;
+  border: 1px solid #15a5ae;
   border-radius: 12px;
   margin: 15px;
 }
@@ -108,7 +133,7 @@
 
 .single-camera-page .main-content .bottom {
   border: 1px solid #ccc;
-  height: 25vh;
+  min-height: 25vh;
   border-radius: 12px;
   margin: 15px;
   padding: 20px;
@@ -119,6 +144,220 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #203B6982;
-  height: 60%;
+  color: #979797;
+  height: 70%;
+}
+
+.single-camera-page .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(34, 36, 40, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-camera-page .modal-header {
+  display: flex;
+  margin-bottom: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.single-camera-page .modal {
+  background-color: rgb(61, 60, 75);
+  padding: 40px;
+  width: 600px;
+  border-radius: 15px;
+}
+
+.single-camera-page .modal h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.single-camera-page .modal label {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.single-camera-page .modal input {
+  width: 100%;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  background-color: rgb(83, 82, 97);
+  color: #fff;
+  border-radius: 4px;
+  outline: none;
+}
+
+.single-camera-page .modal input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+
+.single-camera-page .modal-overlay .modal-header h2 {
+  color: #fff;
+}
+
+.single-camera-page .modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.single-camera-page .close-btn {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.single-camera-page .close-btn:hover {
+  color: #15a5ae;
+}
+
+.single-camera-page .add-camera-btn {
+  padding: 10px 20px;
+  background-color: #15a5ae;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-family: "Josefin Sans";
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.single-camera-page .add-camera-btn:hover {
+  background-color: #0056b3;
+}
+
+.single-camera-page .modal .modal-actions {
+  display: flex;
+  justify-content: end;
+}
+
+.single-camera-page .modal .add-btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #15a5ae;
+  border: 1px solid #15a5ae;
+  width: 100px;
+  color: white;
+}
+
+.single-camera-page .modal .add-btn:hover {
+  background-color: #14959e;
+  color: #fff;
+}
+
+.single-camera-page .trackers-container {
+  height: 23vh;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.single-camera-page .trackers-container .tracker {
+  width: 100%;
+  min-height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(53, 51, 70);
+  border-radius: 10px;
+  color: #fff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+
+
+/* .single-camera-page .trackers-container .tracker:hover {
+  background-color: #e7f1ff;
+} */
+
+.single-camera-page .events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+.single-camera-page .event {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.single-camera-page .bar-container {
+  flex-grow: 1;
+  margin-left: 10px;
+  height: 30px;
+  width: 100%;
+  background-color: rgba(53, 51, 70, 255);
+  border-radius: 5px;
+}
+
+.single-camera-page .confidence-bar {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.single-camera-page .event span {
+  min-width: 15vw;
+  max-width: 15vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.single-camera-page .trackers-container::-webkit-scrollbar {
+  width: 0px;
+}
+
+.single-camera-page .trackers-container::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.single-camera-page .trackers-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* .single-camera-page #start-tracking-btn {
+  background-color: #1d373c;
+  color: #4cad9d;
+  border: 1px solid #1d373c;
+}
+
+.single-camera-page #stop-tracking-btn {
+  background-color: #432635;
+  color: #ca6373;
+  border: 1px solid #432635;
+} */
+
+.single-camera-page #clear-all-btn {
+  border: 1px solid #15a5ae;
+  background-color: transparent;
+  color: #15a5ae;
+}
+
+.single-camera-page #clear-all-btn:hover {
+  border: 1px solid #15a5ae;
+  background-color: rgb(60, 58, 77);
+  color: #15a5ae;
 }

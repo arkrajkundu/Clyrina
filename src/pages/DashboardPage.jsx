@@ -3,6 +3,7 @@ import './DashboardPage.css';
 import ReactHlsPlayer from 'react-hls-player';
 import Sidebar from '../components/Sidebar';
 import { Link } from 'react-router-dom';
+import Webcam from "react-webcam";
 
 function DashboardPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -10,6 +11,12 @@ function DashboardPage() {
   const [title, setTitle] = useState('');
   const [streamUrl, setStreamUrl] = useState('');
   const [errors, setErrors] = useState({ title: '', streamUrl: '' });
+
+  const videoConstraints = {
+    width: 1280,
+    height: 720,
+    facingMode: "user", // Use "environment" for rear camera (if using a tablet or smtg)
+  };
 
   useEffect(() => {
     const fetchCameras = async () => {
@@ -110,16 +117,25 @@ function DashboardPage() {
           ) : (
             <ul className="camera-list">
               {cameras.map((camera) => (
-                <Link key={camera._id} className='camera-item' to={`/single-camera/${camera._id}`}>
+                <Link key={camera._id} className='camera-item no-link-style' to={`/single-camera/${camera._id}`}>
                   <h4>{camera.name}</h4>
                   <div className="video-container">
-                    <ReactHlsPlayer
-                      src={camera.stream_url}
-                      autoPlay={true}
-                      controls={false}
-                      width="100%"
-                      height="auto"
-                    />
+                    {camera.stream_url === "webcam" ? (
+                      <Webcam
+                        audio={false}
+                        videoConstraints={videoConstraints}
+                        width="100%"
+                        height="auto"
+                      />
+                    ) : (
+                      <ReactHlsPlayer
+                        src={camera.stream_url}
+                        autoPlay={true}
+                        controls={false}
+                        width="100%"
+                        height="auto"
+                      />
+                    )}
                   </div>
                 </Link>
               ))}

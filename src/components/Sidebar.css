@@ -1,19 +1,21 @@
-/* Sidebar styles */
 .sidebar {
-  width: 16vw;
-  background-color: #fff;
+  position: sticky;
+  top: 0;
+  min-width: 16vw;
+  background-color: #1a1927;
+  color: #15a5ae;
   padding: 20px;
   height: 100vh;
   text-align: center;
-  border-right: 1px solid #e0e6ed;
   margin-right: 50px;
 }
 
+
 .sidebar .logo {
   margin: 30px 10px;
-  color: rgba(35, 131, 205, 255);
+  color: #fff;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 30px;
 }
 
 .sidebar menu {
@@ -25,49 +27,52 @@
   padding: 50px;
 }
 
-.nav ul {
+.sidebar .nav ul {
   list-style: none;
   width: 100%;
 }
 
-.nav-item {
+.sidebar .nav ul li {
+  margin-bottom: 20px;
+}
+
+.sidebar .nav-item {
   padding: 12px;
   border-radius: 8px;
-  color: #333;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
+  color: #979797;
 }
 
-.nav-item.active,
-.nav-item:hover {
-  background-color: #e7f1ff;
-  color: #007bff;
+.sidebar .nav-item.active,
+.sidebar .nav-item:hover {
+  background-color: #232230;
+  color: #14959e;
 }
 
-/* Profile Section */
-.profile-section {
+.sidebar .profile-section {
   margin-top: auto;
   padding-top: 20px;
   width: 100%;
   border-top: 2px solid #e0e6ed;
 }
 
-.profile-pic {
+.sidebar .profile-pic {
   width: 50px;
   height: 50px;
   border-radius: 10px;
   margin-bottom: 10px;
 }
 
-.profile-name {
-  color: #333;
+.sidebar .profile-name {
+  color: #b4b4b4;
   margin-bottom: 5px;
   display: block;
 }
 
-.logout-btn {
-  color: #007bff;
+.sidebar .logout-btn {
+  color: #14959e;
   background: none;
   border: none;
   cursor: pointer;
@@ -76,6 +81,6 @@
   transition: color 0.3s;
 }
 
-.logout-btn:hover {
+.sidebar .logout-btn:hover {
   color: #0056b3;
 }
